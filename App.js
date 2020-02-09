@@ -141,7 +141,7 @@ export default class App extends Component {
     //If scanValue is not empty, then return this
     if (this.state.resultValue != null) {
       return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView>
           <Text style={styles.heading}>Results</Text>
           <Text style={styles.simpleText}>
             Brand: {this.state.resultValue.brands}
