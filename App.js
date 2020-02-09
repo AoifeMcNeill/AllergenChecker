@@ -25,6 +25,8 @@ import {
   ScrollView,
 } from 'react-native';
 
+import {Header, Icon} from 'react-native-elements';
+
 //URL for the Online DataBase (ODB), latter half to be included later
 const apiUrl = 'https://world.openfoodfacts.org';
 
@@ -142,25 +144,30 @@ export default class App extends Component {
     if (this.state.resultValue != null) {
       return (
         <ScrollView>
-          <Text style={styles.heading}>Results</Text>
+          <View>
+            <Header
+              leftComponent={{icon: 'menu', color: '#fff'}}
+              centerComponent={{text: 'Results', style: {color: '#fff'}}}
+              rightComponent={{icon: 'home', color: '#fff'}}
+            />
+          </View>
+          <Text style={styles.headingText}>Brand:</Text>
+          <Text style={styles.simpleText}>{this.state.resultValue.brands}</Text>
+          <Text style={styles.headingText}>Product:</Text>
           <Text style={styles.simpleText}>
-            Brand: {this.state.resultValue.brands}
+            {this.state.resultValue.product_name}
           </Text>
-          <Text style={styles.simpleText}>
-            Product: {this.state.resultValue.product_name}
-          </Text>
-          <Text style={styles.heading}>Ingredients:</Text>
+          <Text style={styles.headingText}>Ingredients:</Text>
           <Text style={styles.simpleText}>
             {this.state.resultValue.ingredients.join(', ')}
           </Text>
+          <Text style={styles.headingText}>Traces:</Text>
+          <Text style={styles.simpleText}>{this.state.resultValue.traces}</Text>
+          <Text style={styles.headingText}>Labels:</Text>
+          <Text style={styles.simpleText}>{this.state.resultValue.labels}</Text>
+          <Text style={styles.headingText}>Origins:</Text>
           <Text style={styles.simpleText}>
-            Traces: {this.state.resultValue.traces}
-          </Text>
-          <Text style={styles.simpleText}>
-            Labels: {this.state.resultValue.labels}
-          </Text>
-          <Text style={styles.simpleText}>
-            Origins: {this.state.resultValue.origins}
+            {this.state.resultValue.origins}
           </Text>
           <Text style={styles.simpleText}>
             {this.state.resultValue
@@ -234,12 +241,15 @@ const styles = StyleSheet.create({
     width: 300,
     marginTop: 16,
   },
-  heading: {
+  headingText: {
     color: 'black',
     fontSize: 24,
     alignSelf: 'center',
-    padding: 10,
+    marginLeft: 5,
+    marginRight: 5,
     marginTop: 30,
+    fontWeight: 'bold',
+    flexWrap: 'wrap',
   },
   simpleText: {
     color: 'black',
