@@ -239,7 +239,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#2c3539',
     padding: 10,
     width: 300,
-    marginTop: 16,
   },
   headingText: {
     color: 'black',
@@ -255,8 +254,8 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 20,
     alignSelf: 'center',
-    padding: 10,
-    marginTop: 16,
+    marginLeft: 5,
+    marginRight: 5,
     flex: 1,
   },
 });
