@@ -28,3 +28,5 @@ class menuButton extends Component {
     );
   }
 }
+
+export default menuButton;
