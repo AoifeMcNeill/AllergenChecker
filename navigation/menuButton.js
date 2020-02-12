@@ -1,4 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
+
+//Menu button is designed as the classic "Hamburger Icon" style.
+//toggleDrawer is used to open up the menu once the "Hamburger" is pressed
+
+//Imports
 import React, {Component} from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
 
@@ -28,5 +33,5 @@ class menuButton extends Component {
     );
   }
 }
-
+//Can be used across the app
 export default menuButton;
