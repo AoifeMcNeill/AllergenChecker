@@ -5,7 +5,7 @@ import menuButton from './menuButton';
 import BarcodeScanner from '../pages/scanner';
 import {headerStyle, mainColor} from './HeaderStyle';
 
-//Navigation menu stack opens upon pressing "Hamburger" icon.
+//Navigation menu stack opens upon pressing "Hamburger" icon from home.
 const homeNav = createStackNavigator({
   Home: {
     screen: BarcodeScanner,
