@@ -3,6 +3,7 @@ import homeNav from './homeNav';
 import addAllergenNav from './addAllergenNav';
 import profileNav from './profileNav';
 
+//Full nav menu
 const DrawerNavigator = createDrawerNavigator(
   {
     Home: {
@@ -24,6 +25,7 @@ const DrawerNavigator = createDrawerNavigator(
       },
     },
   },
+  //Once option is "activated", give it this tint colour
   {
     contentOptions: {
       activeTintColor: '#6daad9',
