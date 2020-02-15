@@ -1,36 +1,27 @@
 import Realm from 'realm';
 
-//Realm database : Allergens and User
+//Database for Allergens and User
 
-
-class Allergen extends Realm.Object {
-}
+class Allergen extends Realm.Object {}
 
 Allergen.schema = {
-    name: 'Allergen',
-    properties: {
-        id: 'string',
-        name: 'string',
-    },
+  name: 'Allergen',
+  properties: {
+    id: 'string',
+    name: 'string',
+  },
 };
 
-class User extends Realm.Object {
-}
+class User extends Realm.Object {}
 
 User.schema = {
-    name: 'User',
-    primaryKey: 'username',
-    properties: {
-        username: 'string',
-        name: 'string',
-        birthDate: 'date?',
-        gender: 'string?',
-        allergies: 'Allergen[]',
-        updatedAt: 'date?',
-    },
+  name: 'User',
+  primaryKey: 'username',
+  properties: {
+    username: 'string',
+    allergies: 'Allergen[]',
+    updatedAt: 'date?',
+  },
 };
-
-
-// incrémenter schemaVersion à chaque modification des tables
 
 export default new Realm({schema: [Allergen, User], schemaVersion: 20});
