@@ -25,9 +25,9 @@ import {
   ScrollView,
 } from 'react-native';
 
-import ScreenName from '../components/ScreenName.js';
+import ScreenName from 'AllergenChecker/components/ScreenName.js';
 
-import Header from '../components/Header.js';
+import Header from 'AllergenChecker/components/Header.js';
 
 //URL for the Online DataBase (ODB), latter half to be included later
 const apiUrl = 'https://world.openfoodfacts.org';

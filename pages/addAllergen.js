@@ -10,9 +10,9 @@ import {
   TextInput,
 } from 'react-native';
 
-import ScreenName from '../components/ScreenName.js';
+import ScreenName from 'AllergenChecker/components/ScreenName.js';
 
-import Header from '../components/Header.js';
+import Header from 'AllergenChecker/components/Header.js';
 
 export default class addAllergen extends Component {
   constructor(props) {
