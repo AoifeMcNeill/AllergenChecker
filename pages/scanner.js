@@ -31,7 +31,7 @@ import {Header, Icon} from 'react-native-elements';
 const apiUrl = 'https://world.openfoodfacts.org';
 
 //Intiialization of the program
-export default class App extends Component {
+export default class scanner extends Component {
   constructor() {
     super();
     //Sets default state
