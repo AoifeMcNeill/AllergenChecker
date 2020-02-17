@@ -1,64 +1,83 @@
-import React, {Component} from React;
+import React, {Component} from 'React';
 
-import {StyleSheet, FlatList, Text, View, Alert, TouchableOpacity, TextInput} from 'react-native';
+import {
+  StyleSheet,
+  FlatList,
+  Text,
+  View,
+  Alert,
+  TouchableOpacity,
+  TextInput,
+} from 'react-native';
 
 export default class addAllergen extends Component {
-  constructor (props) {
-    super (props);
-
-    this.array = [],
-    this.state = {
-      arrayHolder: [],
-      textInput_Holder: ''
-    }
+  constructor(props) {
+    super(props);
+    (this.array = [])(
+      (this.state = {
+        arrayHolder: [],
+        textInput_Holder: '',
+      }),
+    );
   }
 
-  ComponentDidMount(){
-    this.setState({ arrayHolder: [this.array]})
+  ComponentDidMount() {
+    this.setState({arrayHolder: [this.array]});
   }
 
   joinData = () => {
     this.array.push({title: this.state.textInput_Holder});
-    this.setState({arrayHolder: [...this.array]})
-  }
+    this.setState({arrayHolder: [...this.array]});
+  };
 
   FlatListItemsSeparator = () => {
-    return(
+    return (
       <View
-       style={{
-        height: 1,
-        weifth: "100%",
-        backgroundColor: "#607D8B",
-       }} 
+        // eslint-disable-next-line react-native/no-inline-styles
+        style={{
+          height: 1,
+          width: '100%',
+          backgroundColor: '#607D8B',
+        }}
       />
     );
-  }
+  };
 
-  getItem(item){
+  getItem(item) {
     Alert.alert(item);
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <View style={styles.MainContainer}>
-        <TextInput 
-         placeholder="Enter value here"
-         onChangeText={data => this.setState({textInput_Holder: data})}
-         style={styles.textInputStyle}
-         underlineColorAndroid='transparent'
+        <TextInput
+          placeholder="Enter value here"
+          onChangeText={data => this.setState({textInput_Holder: data})}
+          style={styles.textInputStyle}
+          underlineColorAndroid="transparent"
         />
 
-        <TouchableOpacity onPress={this.joinData} activeOpacity={0.7} style={styles.button} >
+        <TouchableOpacity
+          onPress={this.joinData}
+          activeOpacity={0.7}
+          style={styles.button}>
           <Text style={styles.buttonText}>Add values to FlatList</Text>
         </TouchableOpacity>
 
-        <FlatList 
-         data={this.state.arrayHolder}
-         width='100%'
-         extraData={this.state.arrayHolder}
-         keyExtractor={(index) => index.toString()}
-         ItemSeparatorComponent={this.FlatListItemsSeparator}
-         renderItem={({item})=><Text style={styles.item} onPress{this.GetItem.bind(this, item.title)} > {item.title} </Text>}
+        <FlatList
+          data={this.state.arrayHolder}
+          width="100%"
+          extraData={this.state.arrayHolder}
+          keyExtractor={index => index.toString()}
+          ItemSeparatorComponent={this.FlatListItemsSeparator}
+          renderItem={({item}) => (
+            <Text
+              style={styles.item}
+              onPress={this.GetItem.bind(this, item.title)}>
+              {' '}
+              {item.title}{' '}
+            </Text>
+          )}
         />
       </View>
     );
@@ -70,7 +89,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flex: 1,
-    margin: 2
+    margin: 2,
   },
 
   item: {
@@ -86,7 +105,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#4CAF50',
     borderRadius: 7,
-    marginTop: 12
+    marginTop: 12,
   },
 
   button: {
@@ -95,7 +114,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#4CAF50',
     borderRadius: 8,
-    marginTop: 10
+    marginTop: 10,
   },
 
   buttonText: {
