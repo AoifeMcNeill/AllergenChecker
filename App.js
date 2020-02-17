@@ -2,15 +2,27 @@ import React, {Component} from 'react';
 
 import {Text, View, StyleSheet} from 'react-native';
 
+import ScreenName from '../components/ScreenName.js';
+
+import Header from '../components/Header.js';
+
 export default class App extends Component {
   constructor() {
     super();
   }
 
+  static navigationOptions = {};
+
   render() {
     return (
       <View>
         <Text style={styles.simpleText}>Welcome!</Text>
+        <React.Fragment>
+          <Header />
+          <View style={styles.container}>
+            <ScreenName name={'Home'} />>
+          </View>
+        </React.Fragment>
       </View>
     );
   }
@@ -23,5 +35,11 @@ const styles = StyleSheet.create({
     color: '#000',
     flexWrap: 'wrap',
     fontSize: 18,
+  },
+
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

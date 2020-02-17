@@ -25,7 +25,9 @@ import {
   ScrollView,
 } from 'react-native';
 
-import {Header, Icon} from 'react-native-elements';
+import ScreenName from '../components/ScreenName.js';
+
+import Header from '../components/Header.js';
 
 //URL for the Online DataBase (ODB), latter half to be included later
 const apiUrl = 'https://world.openfoodfacts.org';
@@ -42,6 +44,8 @@ export default class scanner extends Component {
     };
   }
   //End
+
+  static navigationOptions = {};
   //If link is opened, do this.
   onOpenlink() {
     Linking.openURL(this.state.scanValue); //Open link attached to scanned value
@@ -144,13 +148,12 @@ export default class scanner extends Component {
     if (this.state.resultValue != null) {
       return (
         <ScrollView>
-          <View>
-            <Header
-              leftComponent={{icon: 'menu', color: '#fff'}}
-              centerComponent={{text: 'Results', style: {color: '#fff'}}}
-              rightComponent={{icon: 'home', color: '#fff'}}
-            />
-          </View>
+          <React.Fragment>
+            <Header />
+            <View style={styles.container}>
+              <ScreenName name={'Scanner'} />
+            </View>
+          </React.Fragment>
           <Text style={styles.headingText}>Brand:</Text>
           <Text style={styles.simpleText}>{this.state.resultValue.brands}</Text>
           <Text style={styles.headingText}>Product:</Text>

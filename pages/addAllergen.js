@@ -10,6 +10,10 @@ import {
   TextInput,
 } from 'react-native';
 
+import ScreenName from '../components/ScreenName.js';
+
+import Header from '../components/Header.js';
+
 export default class addAllergen extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +24,8 @@ export default class addAllergen extends Component {
       }),
     );
   }
+
+  static navigationOptions = {};
 
   ComponentDidMount() {
     this.setState({arrayHolder: [this.array]});
@@ -56,7 +62,12 @@ export default class addAllergen extends Component {
           style={styles.textInputStyle}
           underlineColorAndroid="transparent"
         />
-
+        <React.Fragment>
+          <Header />
+          <View style={styles.container}>
+            <ScreenName name={'Add Allergen'} />
+          </View>
+        </React.Fragment>
         <TouchableOpacity
           onPress={this.joinData}
           activeOpacity={0.7}
@@ -90,6 +101,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     margin: 2,
+  },
+
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   item: {
