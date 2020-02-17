@@ -12,7 +12,7 @@ export default class App extends Component {
       <View>
         <Text style={styles.simpleText}>Welcome!</Text>
       </View>
-    )
+    );
   }
 }
 
