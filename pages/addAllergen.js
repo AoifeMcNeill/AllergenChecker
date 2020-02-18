@@ -10,10 +10,6 @@ import {
   TextInput,
 } from 'react-native';
 
-//import ScreenName from 'AllergenChecker/components/ScreenName.js';
-
-//import Header from 'AllergenChecker/components/Header.js';
-
 export default class addAllergen extends Component {
   constructor(props) {
     super(props);
@@ -24,8 +20,6 @@ export default class addAllergen extends Component {
       }),
     );
   }
-
-  //static navigationOptions = {};
 
   ComponentDidMount() {
     this.setState({arrayHolder: [this.array]});
@@ -62,19 +56,12 @@ export default class addAllergen extends Component {
           style={styles.textInputStyle}
           underlineColorAndroid="transparent"
         />
-        //<React.Fragment>
-          //<Header />
-          //<View style={styles.container}>
-            //<ScreenName name={'Add Allergen'} />
-          //</View>
-        //</React.Fragment>
         <TouchableOpacity
           onPress={this.joinData}
           activeOpacity={0.7}
           style={styles.button}>
           <Text style={styles.buttonText}>Add values to FlatList</Text>
         </TouchableOpacity>
-
         <FlatList
           data={this.state.arrayHolder}
           width="100%"

@@ -25,10 +25,6 @@ import {
   ScrollView,
 } from 'react-native';
 
-//import ScreenName from 'AllergenChecker/components/ScreenName.js';
-
-//import Header from 'AllergenChecker/components/Header.js';
-
 //URL for the Online DataBase (ODB), latter half to be included later
 const apiUrl = 'https://world.openfoodfacts.org';
 
@@ -148,12 +144,6 @@ export default class scanner extends Component {
     if (this.state.resultValue != null) {
       return (
         <ScrollView>
-          //<React.Fragment>
-            //<Header />
-            //<View style={styles.container}>
-              //<ScreenName name={'Scanner'} />
-            //</View>
-          //</React.Fragment>
           <Text style={styles.headingText}>Brand:</Text>
           <Text style={styles.simpleText}>{this.state.resultValue.brands}</Text>
           <Text style={styles.headingText}>Product:</Text>
