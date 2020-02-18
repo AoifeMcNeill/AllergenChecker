@@ -17,12 +17,10 @@ import {
 export default class addAllergen extends Component {
   constructor(props) {
     super(props);
-    (this.array = [])(
-      (this.state = {
-        arrayHolder: [],
-        textInput_Holder: '',
-      }),
-    );
+    this.state = {
+      arrayHolder: [],
+      textInput_Holder: '',
+    };
   }
 
   //static navigationOptions = {};
@@ -74,7 +72,6 @@ export default class addAllergen extends Component {
           style={styles.button}>
           <Text style={styles.buttonText}>Add values to FlatList</Text>
         </TouchableOpacity>
-
         <FlatList
           data={this.state.arrayHolder}
           width="100%"
