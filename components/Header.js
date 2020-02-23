@@ -1,12 +1,15 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {withNavigation} from 'react-navigation';
 
 import DrawerTrigger from './DrawerTrigger';
 
 class Header extends React.Component {
   render() {
     return (
-      <DrawerTrigger />
+      <View style={styles.header}>
+        <DrawerTrigger />
+      </View>
     );
   }
 }
@@ -18,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Header;
+export default withNavigation(Header);
