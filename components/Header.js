@@ -6,7 +6,7 @@ import DrawerTrigger from './DrawerTrigger';
 class Header extends React.Component {
   render() {
     return (
-        <DrawerTrigger />
+      <DrawerTrigger />
     );
   }
 }
