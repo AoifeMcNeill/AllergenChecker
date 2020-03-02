@@ -8,7 +8,6 @@ function Feed({navigation}){
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Feed Screen</Text>
       <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-      <Button title="Toggle drawer" onPress{...() => navigation.toggleDrawer()} />
     </View>
   );
 }
@@ -21,21 +20,13 @@ function Notifications(){
   );
 }
 
-function CustomDrawerContent (props) {
-  return(
-    <DrawerContentScrollView {...props}>
-      <DrawerItemList {...props} />
-      <DrawerItem label = "Close drawer" onPress={() => props.navigation.closeDrawer ()} />
-      <DrawerItem label = "Toggle drawer" onPress={() => props.navigation.toggleDrawer()} />
-    </DrawerContentScrollView>
-  );
-}
-
 const Drawer = createDrawerNavigator();
 
 function MyDrawer(){
   return(
     <Drawer.Navigator drawerContent={props => CustomDrawerContent(props)}>
+      <Drawer.Screen name="Scan Barcode" component={scanner.js} />
+      <Drawer.Screen name="Add Allergen" component={addAllergen.js} />
       <Drawer.Screen name="Feed" component={Feed} />
       <Drawer.Screen name="Notifications" component={Notifications} />
     </Drawer.Navigator>
