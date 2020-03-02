@@ -25,10 +25,6 @@ import {
   ScrollView,
 } from 'react-native';
 
-import Header from 'AllergenChecker/components/Header.js';
-
-import ScreenName from 'AllergenChecker/components/ScreenName.js';
-
 //URL for the Online DataBase (ODB), latter half to be included later
 const apiUrl = 'https://world.openfoodfacts.org';
 
@@ -45,7 +41,6 @@ export default class scanner extends Component {
   }
   //End
 
-  static navigationOptions = {};
   //If link is opened, do this.
   onOpenlink() {
     Linking.openURL(this.state.scanValue); //Open link attached to scanned value
@@ -69,8 +64,6 @@ export default class scanner extends Component {
       .then(data => this.onParseInfo(data)) //returns value
       .catch(response => that.onParseInfo('Error', scanValue)); //if response returns null, return error
   }
-
-  static navigationOptions = {};
 
   //Get specific info from ODB api
   onParseInfo(json, scanValue) {
@@ -187,12 +180,6 @@ export default class scanner extends Component {
               ? 'Scanned QR code: ' + this.state.scanValue //displays scanned barcode value
               : ''}
           </Text>
-          <React.Fragment>
-            <Header />
-            <View style={styles.container}>
-              <ScreenName name={'Add Allergen'} />
-            </View>
-          </React.Fragment>
           {this.state.scanValue.includes('http') ? ( //If scanned item contains a URL link, do this.
             <TouchableHighlight
               onPress={() => this.onOpenlink()}
