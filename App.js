@@ -3,8 +3,8 @@ import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem} from '@react-navigation/drawer';
 
-import scanner from './pages/scanner.js';
-import addAllergen from './pages/addAllergen.js';
+import scanner from '.\pages\scanner.js';
+import addAllergen from '.\pages\addAllergen.js';
 
 function Home({navigation}){
   return(

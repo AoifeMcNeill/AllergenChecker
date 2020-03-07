@@ -10,8 +10,8 @@ import {createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerIt
 //Import the android camera & its utilities
 import {CameraKitCameraScreen} from 'react-native-camera-kit';
 
-import addAllergen from './pages/addAllergen.js';
-import App from './App.js';
+import addAllergen from '.\pages\addAllergen.js';
+import App from '.\App.js';
 
 //Imports the basic components for react-native
 //Text/View/StyleSheet for UI
