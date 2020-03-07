@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AppRegistry, View, Text, Button, TextInput} from 'react-native';
 
-class addAllergen extends Component{
+export default class addAllergen extends Component{
   constructor(props){
     super(props);
     this.state = {
