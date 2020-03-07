@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        alignSelf: 'right',
+        alignSelf: 'flex-end',
         flex: 1,
         borderRadius: 10,
         backgroundColor: 'black',
