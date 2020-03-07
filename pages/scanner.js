@@ -10,8 +10,8 @@ import {createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerIt
 //Import the android camera & its utilities
 import {CameraKitCameraScreen} from 'react-native-camera-kit';
 
-import addAllergen from '.\pages\addAllergen.js';
-import App from '.\App.js';
+//import addAllergen from './pages/addAllergen.js';
+//import App from './App.js';
 
 //Imports the basic components for react-native
 //Text/View/StyleSheet for UI
@@ -33,7 +33,7 @@ import {
 //URL for the Online DataBase (ODB), latter half to be included later
 const apiUrl = 'https://world.openfoodfacts.org';
 
-const Drawer = createDrawerNavigator();
+//const Drawer = createDrawerNavigator();
 
 //Intiialization of the program
 export default class scanner extends Component {
@@ -48,43 +48,43 @@ export default class scanner extends Component {
   }
   //End
 
-  Home({navigation}){
-    return(
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-      </View>
-    );
-  }
+  //Home({navigation}){
+    //return(
+      //<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        //<Button title="Open drawer" onPress={() => navigation.openDrawer()} />
+      //</View>
+    //);
+  //}
   
-  Notifications(){
-    return(
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Notifications Screen</Text>
-      </View>
-    );
-  }
+  //Notifications(){
+    //return(
+      //<View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        //<Text>Notifications Screen</Text>
+      //</View>
+    //);
+  //}
   
-  CustomDrawerContent(props) {
-    return (
-      <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props} />
-        <DrawerItem
-          label="Close drawer"
-          onPress={() => props.navigation.closeDrawer()}
-        />
-      </DrawerContentScrollView>
-    );
-  }
+  //CustomDrawerContent(props) {
+    //return (
+      //<DrawerContentScrollView {...props}>
+        //<DrawerItemList {...props} />
+        //<DrawerItem
+          //label="Close drawer"
+          //onPress={() => props.navigation.closeDrawer()}
+        ///>
+      //</DrawerContentScrollView>
+    //);
+  //}
   
-  MyDrawer(){
-    return(
-      <Drawer.Navigator drawerContent={props => CustomDrawerContent(props)}>
-        <Drawer.Screen name="Home" component={App} />
-        <Drawer.Screen name="Add Allergen" component={addAllergen} />
-        <Drawer.Screen name="Notifications" component={Notifications} />
-      </Drawer.Navigator>
-    );
-  }
+  //MyDrawer(){
+    //return(
+      //<Drawer.Navigator drawerContent={props => CustomDrawerContent(props)}>
+        //<Drawer.Screen name="Home" component={App} />
+        //<Drawer.Screen name="Add Allergen" component={addAllergen} />
+        //<Drawer.Screen name="Notifications" component={Notifications} />
+      //</Drawer.Navigator>
+    //);
+  //}
 
   //If link is opened, do this.
   onOpenlink() {
