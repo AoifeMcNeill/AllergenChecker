@@ -1,27 +1,68 @@
-import React, {Component} from 'react';
-import {AppRegistry, View, Text, Button, TextInput} from 'react-native';
+import React from 'react';
+import {Text, FlatList, View, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
 
-export default class addAllergen extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      textInput : []
+export default class addAllergen {
+    constructor() {
+        super();
+    };
+
+    render(){
+        return(
+            <View style={styles.container}>
+                <Text style={styles.simpleText}>Add your allergen/intolerance:</Text>
+                <TextInput style={styles.inputStyle}></TextInput>
+                <TouchableOpacity style={styles.button}></TouchableOpacity>
+                <TouchableOpacity style={styles.button}></TouchableOpacity>
+                <FlatList styles={styles.listStyle}></FlatList>
+            </View>
+        )
     }
-  }
-
-  addTextInput = (key) => {
-    let textInput = this.state.textInput;
-    textInput.push(<TextInput key={key} />);
-    this.setState({textInput})
-  }
-  render(){
-    return(
-      <View>
-        <Button title='+' onPress={() => this.addTextInput(this.state.textInput.length)} />
-        {this.state.textInput.map((value, index) => {
-          return value
-        })}
-      </View>
-    )
-  }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        alignContent: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        flex: 1,
+        padding: 10,
+    },
+    
+    simpleText: {
+        alignSelf: 'center',
+        flex: 1,
+        color: 'black',
+        fontSize: 20,
+        marginLeft: 5,
+        marginRight: 5,
+    },
+
+    inputStyle: {
+        color: 'black',
+        alignSelf: 'center',
+        borderColor: 'black',
+        borderRadius: 10,
+        borderStyle: 'solid',
+        backgroundColor: 'white',
+        fontSize: 20,
+        flex: 1,
+    },
+
+    button: {
+        alignSelf: 'right',
+        flex: 1,
+        borderRadius: 10,
+        backgroundColor: 'black',
+        color: 'white',
+        fontSize: 20,
+        padding: 10,
+    },
+
+    listStyle: {
+        borderStyle: 'solid',
+        flex: 1,
+        alignContent: 'center',
+        justifyContent: 'center',
+        borderColor: 'black',
+    },
+})
