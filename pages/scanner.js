@@ -237,9 +237,9 @@ export default class scanner extends Component {
             style={styles.button}>
             <Text style={{color: '#FFFFFF', fontSize: 12}}>Open Scanner</Text>
           </TouchableHighlight>
-          <NavigationContainer>
-            <MyDrawer />
-          </NavigationContainer>
+          //<NavigationContainer>
+            //<MyDrawer />
+          //</NavigationContainer>
         </View>
       );
     }
