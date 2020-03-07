@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Text, FlatList, View, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
 
-export default class addAllergen {
+export default class addAllergen extends Component{
     constructor() {
         super();
-    };
+    }
 
     render(){
         return(
