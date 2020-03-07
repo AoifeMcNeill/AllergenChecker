@@ -4,8 +4,8 @@
 
 //Import react into this file
 import React, {Component} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem} from '@react-navigation/drawer';
+//import {NavigationContainer} from '@react-navigation/native';
+//import {createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem} from '@react-navigation/drawer';
 
 //Import the android camera & its utilities
 import {CameraKitCameraScreen} from 'react-native-camera-kit';
