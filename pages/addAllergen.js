@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Text, FlatList, View, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
 
 function Item({title, parent}){
-    //console.log(foo)
     return(
         <View style = {styles.item}>
             <Text style={styles.title}>
