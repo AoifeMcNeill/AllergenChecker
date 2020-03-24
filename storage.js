@@ -1,0 +1,3 @@
+let allergens = [];
+
+export { allergens };

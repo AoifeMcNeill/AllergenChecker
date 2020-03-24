@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Text, FlatList, View, TouchableOpacity, StyleSheet, TextInput} from 'react-native';
+import {allergens} from '../storage';
 
 function Item({title, parent}){
     return(
@@ -45,6 +46,8 @@ export default class addAllergen extends Component{
         newState.unshift({id:toAdd, text: toAdd})
         this.setState({showText: newState})
         this.textInput.current.clear()
+
+        allergens.push(toAdd)
         
         //get input from textinput
         //send input to flatlist

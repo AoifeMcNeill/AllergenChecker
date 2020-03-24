@@ -10,6 +10,8 @@ import React, {Component} from 'react';
 //Import the android camera & its utilities
 import {CameraKitCameraScreen} from 'react-native-camera-kit';
 
+import {allergens} from '../storage';
+
 //Imports the basic components for react-native
 //Text/View/StyleSheet for UI
 //Linking for URL interaction
@@ -144,6 +146,7 @@ export default class scanner extends Component {
   }
   //UI view
   render() {
+    console.log(allergens)
     //If scanValue is not empty, then return this
     if (this.state.resultValue != null) {
       return (
