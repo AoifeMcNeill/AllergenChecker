@@ -27,6 +27,7 @@ import {
   Platform,
   StyleSheet,
   ScrollView,
+  Alert,
 } from 'react-native';
 
 //URL for the Online DataBase (ODB), latter half to be included later
@@ -174,6 +175,26 @@ export default class scanner extends Component {
               ? 'Debug: ' + JSON.stringify(this.state.resultValue) //displays resultValue from ODB api
               : ''}
           </Text>
+          if (this.state.resultValue.ingredients == allergens){
+            Alert.alert(
+              'Results:',
+              'This is not safe to eat',
+              [
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
+          }
+          else{
+            Alert.alert(
+              'Results:',
+              'This is safe to eat',
+              [
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
+          }
         </ScrollView>
       );
     } else if (!this.state.openScanner) {

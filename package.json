@@ -15,6 +15,7 @@
     "@react-navigation/drawer": "^5.1.0",
     "@react-navigation/native": "^5.0.6",
     "@react-navigation/stack": "^5.0.6",
+    "expo": "^36.0.2",
     "npm-git-install": "^0.3.0",
     "react": "16.9.0",
     "react-native": "^0.61.5",
