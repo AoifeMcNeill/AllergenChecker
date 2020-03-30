@@ -28,6 +28,7 @@ import {
   StyleSheet,
   ScrollView,
   Alert,
+  TouchableOpacity,
 } from 'react-native';
 
 //URL for the Online DataBase (ODB), latter half to be included later
@@ -74,14 +75,18 @@ export default class scanner extends Component {
 
   //Get specific info from ODB api
   onParseInfo(json, scanValue) {
+    if(json == "Error")
+      return;
     //If there is json, do this
     //if (json.status !== 0 && json.code && json.code.length > 0) {
+      console.log("onParseInfo")
     console.log(json);
     let jsonProduct = json.product;
+    console.log(jsonProduct)
     //returns the specific info wanted
     this.setState({
       resultValue: {
-        product_name: jsonProduct.product_name_en || jsonProduct.product_name,
+        product_name: jsonProduct.product_name_en || jsonProduct.product_name || "Unknown",
         brands: jsonProduct.brands,
         ingredients: (
           jsonProduct.ingredients_text_with_allergens_en ||
@@ -145,6 +150,38 @@ export default class scanner extends Component {
       that.setState({openScanner: true});
     }
   }
+  onCheck(resultValue, allergens){
+    console.log(resultValue, allergens)
+    for(let i of resultValue){
+      for(let j of allergens){
+        console.log("~~~",i,j);
+        if(i == j)
+          return true;
+      }
+    }
+    return false;
+  }
+  onAlert(onCheckResult){
+    if (onCheckResult){
+      Alert.alert(
+        'Results:',
+        'This is not safe to eat',
+        [
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
+    } else {
+      Alert.alert(
+        'Results:',
+        'This is safe to eat',
+        [
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        { cancelable: false }
+      )
+    }
+  }
   //UI view
   render() {
     console.log(allergens)
@@ -175,26 +212,11 @@ export default class scanner extends Component {
               ? 'Debug: ' + JSON.stringify(this.state.resultValue) //displays resultValue from ODB api
               : ''}
           </Text>
-          if (this.state.resultValue.ingredients == allergens){
-            Alert.alert(
-              'Results:',
-              'This is not safe to eat',
-              [
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-              ],
-              { cancelable: false }
-            )
-          }
-          else{
-            Alert.alert(
-              'Results:',
-              'This is safe to eat',
-              [
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-              ],
-              { cancelable: false }
-            )
-          }
+          <TouchableOpacity onPress={this.onAlert(this. onCheck(this.state.resultValue.ingredients, allergens))}>
+              <Text style={styles.simpleText}>
+                Check
+              </Text>
+          </TouchableOpacity>
         </ScrollView>
       );
     } else if (!this.state.openScanner) {
